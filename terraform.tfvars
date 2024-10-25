@@ -1,5 +1,5 @@
-aws_access_key = "AKIAXZEFIDQ5WFB3GQLO"
-aws_secret_key = "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"
+aws_access_key = "AKjkyuyguihuigtytgkjhI"
+aws_secret_key = "oqRz5rlVMfAcbhoq/E"
 region = "eu-north-1"
 ami_id = "ami-089146c5626baa6bf"
 vpc_id = "vpc-0dd11def2150a85d5"
