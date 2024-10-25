@@ -1,3 +1,5 @@
+# Define the required variables for the Terraform configuration
+
 variable "aws_access_key" {
   description = "AWS Access Key"
   type        = string
@@ -14,40 +16,28 @@ variable "region" {
 }
 
 variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
+  description = "AMI ID"
   type        = string
 }
 
-variable "instance_type" {
-  description = "Type of instance to create"
-  type        = string
-}
-
-variable "key_pair_name" {
-  description = "Name of the key pair to use"
+variable "vpc_id" {
+  description = "VPC ID"
   type        = string
 }
 
 variable "subnet_id" {
-  description = "Subnet ID to launch the instance in"
+  description = "Subnet ID"
   type        = string
 }
 
-variable "instance_name" {
-  description = "Name of the EC2 instance"
+variable "instance_type" {
+  description = "EC2 Instance Type"
   type        = string
 }
 
-variable "volume_size" {
-  description = "Size of the root volume in GB"
-  type        = number
-  default     = 8
-}
-
-variable "volume_type" {
-  description = "Type of the root volume"
+variable "key_pair_name" {
+  description = "Key Pair Name"
   type        = string
-  default     = "gp2" # General Purpose SSD
 }
 
 variable "security_group_name" {
@@ -55,7 +45,17 @@ variable "security_group_name" {
   type        = string
 }
 
-variable "vpc_id" {
-  description = "VPC ID where the security group will be created"
+variable "volume_size" {
+  description = "Volume Size in GB"
+  type        = number
+}
+
+variable "volume_type" {
+  description = "Volume Type"
+  type        = string
+}
+
+variable "instance_name" {
+  description = "EC2 Instance Name"
   type        = string
 }
