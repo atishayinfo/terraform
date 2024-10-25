@@ -4,7 +4,7 @@ variable "aws_access_key" {
 }
 
 variable "aws_secret_key" {
-  description = "AWS Secret Access Key"
+  description = "AWS Secret Key"
   type        = string
 }
 
@@ -14,46 +14,48 @@ variable "region" {
 }
 
 variable "ami_id" {
-  description = "Amazon Machine Image ID"
-  type        = string
-}
-
-variable "vpc_id" {
-  description = "VPC ID"
-  type        = string
-}
-
-variable "subnet_id" {
-  description = "Subnet ID"
+  description = "AMI ID for the EC2 instance"
   type        = string
 }
 
 variable "instance_type" {
-  description = "EC2 Instance Type"
+  description = "Type of instance to create"
   type        = string
 }
 
 variable "key_pair_name" {
-  description = "Key pair name"
+  description = "Name of the key pair to use"
   type        = string
 }
 
-variable "security_group_name" {
-  description = "Security group name"
-  type        = string
-}
-
-variable "volume_size" {
-  description = "Root volume size (in GB)"
-  type        = number
-}
-
-variable "volume_type" {
-  description = "Root volume type"
+variable "subnet_id" {
+  description = "Subnet ID to launch the instance in"
   type        = string
 }
 
 variable "instance_name" {
-  description = "Name tag for the EC2 instance"
+  description = "Name of the EC2 instance"
+  type        = string
+}
+
+variable "volume_size" {
+  description = "Size of the root volume in GB"
+  type        = number
+  default     = 8
+}
+
+variable "volume_type" {
+  description = "Type of the root volume"
+  type        = string
+  default     = "gp2" # General Purpose SSD
+}
+
+variable "security_group_name" {
+  description = "Name of the security group"
+  type        = string
+}
+
+variable "vpc_id" {
+  description = "VPC ID where the security group will be created"
   type        = string
 }
