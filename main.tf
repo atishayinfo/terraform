@@ -63,5 +63,3 @@ resource "aws_instance" "ec2_instance" {
 
   associate_public_ip_address = true # Assign a public IP address to the instance
 }
-
-# Variables should be defined in a variables.tf file for clarity
