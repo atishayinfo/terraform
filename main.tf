@@ -17,29 +17,6 @@ provider "aws" {
   region     = var.region
 }
 
-# Create an AWS Security Group
-resource "aws_security_group" "sg" {
-  name        = var.security_group_name
-  description = "Allow SSH inbound traffic"
-  vpc_id      = var.vpc_id
-
-  # Allow inbound SSH traffic
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  # Allow all outbound traffic
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1" # -1 means all protocols
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
 # Create an EC2 instance
 resource "aws_instance" "ec2_instance" {
   ami           = var.ami_id
@@ -52,7 +29,7 @@ resource "aws_instance" "ec2_instance" {
   }
 
   vpc_security_group_ids = [
-    aws_security_group.sg.id # Reference the security group created above
+    var.security_group_id  # Reference the existing security group ID from variables
   ]
 
   # Define the root block device settings
