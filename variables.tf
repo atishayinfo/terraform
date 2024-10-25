@@ -1,5 +1,3 @@
-# Define the required variables for the Terraform configuration
-
 variable "aws_access_key" {
   description = "AWS Access Key"
   type        = string
@@ -11,12 +9,12 @@ variable "aws_secret_key" {
 }
 
 variable "region" {
-  description = "AWS Region"
+  description = "AWS region"
   type        = string
 }
 
 variable "ami_id" {
-  description = "AMI ID"
+  description = "AMI ID for the EC2 instance"
   type        = string
 }
 
@@ -31,31 +29,31 @@ variable "subnet_id" {
 }
 
 variable "instance_type" {
-  description = "EC2 Instance Type"
+  description = "EC2 instance type"
   type        = string
 }
 
 variable "key_pair_name" {
-  description = "Key Pair Name"
+  description = "Key pair name for the EC2 instance"
   type        = string
 }
 
-variable "security_group_name" {
-  description = "Name of the security group"
+variable "security_group_id" {
+  description = "ID of the existing security group"
   type        = string
 }
 
 variable "volume_size" {
-  description = "Volume Size in GB"
+  description = "Size of the root volume (in GiB)"
   type        = number
 }
 
 variable "volume_type" {
-  description = "Volume Type"
+  description = "Type of the root volume"
   type        = string
 }
 
 variable "instance_name" {
-  description = "EC2 Instance Name"
+  description = "Name of the EC2 instance"
   type        = string
 }
